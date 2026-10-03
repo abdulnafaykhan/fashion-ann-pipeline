@@ -1,0 +1,7 @@
+venv/
+.venv/
+__pycache__/
+.dvc/cache/
+.dvc/tmp/
+*.pyc
+*.h5
