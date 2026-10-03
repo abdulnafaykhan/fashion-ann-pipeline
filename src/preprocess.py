@@ -17,8 +17,8 @@ x_test = np.load("data/raw/x_test.npy")
 y_test = np.load("data/raw/y_test.npy")
 
 print("[preprocess] Normalizing pixels to [0,1]...")
-x_train = x_train.astype("float32") / 255.0
-x_test = x_test.astype("float32") / 255.0
+x_train = (x_train.astype("float32") - x_train.mean()) / x_train.std()
+x_test  = (x_test.astype("float32") - x_train.mean()) / x_train.std()
 
 print(f"[preprocess] Train/Val split (seed={seed}, test_size={test_size})")
 x_train, x_val, y_train, y_val = train_test_split(
